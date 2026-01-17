@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sports Website</title>
+    <style>
+        :root {
+            --neon-lime: #ccff00;
+            --deep-navy: #000d1a;
+            --glass: rgba(255, 255, 255, 0.05);
+            --border: rgba(204, 255, 0, 0.3);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial Black', sans-serif; }
+
+        body {
+            background-color: var(--deep-navy);
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* --- SCORE TICKER --- */
+        .ticker-wrap {
+            width: 100%;
+            background: #000;
+            padding: 10px 0;
+            border-bottom: 2px solid var(--neon-lime);
+        }
+
+        .ticker {
+            display: flex;
+            white-space: nowrap;
+            animation: tickerMove 30s linear infinite;
+        }
+
+        .score-unit {
+            padding: 0 40px;
+            font-size: 0.9rem;
+            border-right: 1px solid var(--glass);
+        }
+
+        .live-dot { color: var(--neon-lime); animation: blink 1s infinite; }
+
+        @keyframes tickerMove {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+
+        @keyframes blink { 50% { opacity: 0; } }
+
+        /* --- NAVIGATION --- */
+        nav {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, var(--deep-navy), transparent);
+        }
+
+        .logo { font-size: 2rem; color: var(--neon-lime); font-style: italic; }
+
+        /* --- MAIN LAYOUT --- */
+        .main-container {
+            display: grid;
+            grid-template-columns: 250px 1fr 300px;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* --- SIDEBARS --- */
+        .sidebar {
+            background: var(--glass);
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            padding: 20px;
+            height: fit-content;
+        }
+
+        .menu-item {
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .menu-item:hover { background: var(--neon-lime); color: black; }
+
+        /* --- LIVE CARDS --- */
+        .match-card {
+            background: linear-gradient(135deg, rgba(204, 255, 0, 0.1), transparent);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .teams {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-size: 1.8rem;
+        }
+
+        .score {
+            font-size: 3rem;
+            color: var(--neon-lime);
+            text-shadow: 0 0 20px var(--neon-lime);
+        }
+
+        .btn-stream {
+            margin-top: 20px;
+            padding: 10px 30px;
+            background: var(--neon-lime);
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-stream:hover { transform: scale(1.1); box-shadow: 0 0 20px var(--neon-lime); }
+
+        /* --- NEWS GRID --- */
+        .news-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .news-item {
+            background: var(--glass);
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+
+        .news-item h4 { color: var(--neon-lime); margin-bottom: 5px; }
+
+    </style>
+</head>
+<body>
+
+    <div class="ticker-wrap">
+        <div class="ticker">
+            <div class="score-unit"><span class="live-dot">●</span> FC KNIGHTS 2 - 1 SHARKS (85')</div>
+            <div class="score-unit">LAKERS 112 - 105 BULLS (FINAL)</div>
+            <div class="score-unit"><span class="live-dot">●</span> REAL STEEL 0 - 0 TITANS (12')</div>
+            <div class="score-unit">EAGLES 24 - 17 RAVENS (3RD QTR)</div>
+            <div class="score-unit">WARRIORS 98 - 102 CELTICS (HT)</div>
+        </div>
+    </div>
+
+    <nav>
+        <div class="logo">VELOCITY ⚡</div>
+        <div style="font-size: 1.2rem;">LIVE | SCHEDULE | TICKETS | SHOP</div>
+    </nav>
+
+    <div class="main-container">
+        <aside class="sidebar">
+            <h3>LEAGUES</h3>
+            <div class="menu-item">⚽ Champions League</div>
+            <div class="menu-item">🏀 NBA League</div>
+            <div class="menu-item">🏈 NFL Prime</div>
+            <div class="menu-item">🎾 Grand Slam</div>
+            <div class="menu-item">🏎️ Formula Pro</div>
+        </aside>
+
+        <main>
+            <h2 style="margin-bottom: 20px;">LIVE ARENA</h2>
+            
+            <div class="match-card">
+                <p style="letter-spacing: 5px; margin-bottom: 10px;">EUROPEAN FINALS</p>
+                <div class="teams">
+                    <div>🦁 LIONS</div>
+                    <div class="score">3 - 2</div>
+                    <div>🦅 FALCONS</div>
+                </div>
+                <button class="btn-stream" onclick="alert('Starting 4K Stream...')">WATCH LIVE HD</button>
+            </div>
+
+            <div class="news-grid">
+                <div class="news-item">
+                    <h4>TRANSFERS</h4>
+                    <p>Top striker signs $50M contract with Velocity United.</p>
+                </div>
+                <div class="news-item">
+                    <h4>INJURY REPORT</h4>
+                    <p>Point guard sidelined for 3 weeks after ankle twist.</p>
+                </div>
+            </div>
+        </main>
+
+        <aside class="sidebar">
+            <h3>LEADERBOARD</h3>
+            <div style="margin-top: 20px;">
+                <p>1. 👑 J. Swift (28 Goals)</p>
+                <hr style="opacity: 0.1; margin: 10px 0;">
+                <p>2. ⚡ R. Dash (24 Goals)</p>
+                <hr style="opacity: 0.1; margin: 10px 0;">
+                <p>3. 🦾 M. Iron (22 Goals)</p>
+            </div>
+
+            <div class="match-card" style="margin-top: 30px; padding: 15px;">
+                <h4>AD: PRO GEAR</h4>
+                <p style="font-size: 0.7rem;">Buy the official ball!</p>
+                <button class="btn-stream" style="font-size: 0.7rem; padding: 5px 15px;">SHOP</button>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        // Dynamic Score Update Simulation
+        setInterval(() => {
+            const scoreElement = document.querySelector('.score');
+            if(scoreElement) {
+                // Randomly update score for realism
+                if(Math.random() > 0.9) {
+                    scoreElement.innerText = "4 - 2";
+                    scoreElement.style.color = "#fff";
+                    setTimeout(() => scoreElement.style.color = "var(--neon-lime)", 500);
+                }
+            }
+        }, 5000);
+    </script>
+</body>
+</html>
