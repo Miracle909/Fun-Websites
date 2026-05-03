@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="SonicStyle.css">
+</head>
+<body>
+    <nav>
+    <ul>
+        <li><a href="#">SONIC</a></li>
+        <li><a href="#">SETTING</a></li>
+        <li><a href="CartStorage.html">CART🛒<h2 class="Counter" id="counter">0</h1></a></li>
+    </ul>
+    </nav>
+    <div class="logo">Sonic
+        <a href="download.png">
+            <button class="button1">⚡</button>
+        </a>
+    </div>
+
+    <div class="Searchbar">
+        <input class="Searchbar" type="text" placeholder="Search here..." list="List">
+        <button class="Search">GO</button>
+    </div>
+    <datalist class="List" id="List">
+        <option value="Sonic Son Glasses">👓</option>
+        <option value="Sonic Football">⚽</option>
+        <option value="Sonic Car">🚙</option>
+        <option value="Sonic TV">📺</option>
+        <option value="Soic house">🏚️</option>
+        <option value="Sonic SkateBoard">🛹</option>
+        <option value="Sonic Laptop">💻</option>
+    </datalist>
+
+    <div class="box1">
+        <h1>$40</h1>
+        <div class="picture">👓</div>
+        <p>This Are high rated sonic glasses.It can reduce brightness.</p>
+        <h1>⭐⭐⭐</h1>
+        <input class="Quantity" type="number" placeholder="Quantity">
+        <button onclick="alert('thanks for buying.')" class="BUY">BUY</button>
+        <button onclick="incrementCounter()" class="Cart">ADD</button>
+    </div>
+
+    <div class="box2">
+        <h1>$100</h1>
+        <div class="picture">⚽</div>
+        <p>This Football Is 100 radius, it helps in kicking.</p>
+        <h1>⭐⭐</h1>
+        <input class="Quantity" type="number" placeholder="Quantity">
+        <button onclick="alert('thanks for buying.')" class="BUY">BUY</button>
+        <button onclick="incrementCounter()" class="Cart">ADD</button>
+    </div>
+
+    <div class="box3">
+        <h1>$1,000</h1>
+        <div class="picture">🚙</div>
+        <p>This is a 6feet Hilux,it helps in traveling.</p>
+        <h1>⭐</h1>
+        <input class="Quantity" type="number" placeholder="Quantity">
+        <button onclick="alert('thanks for buying.')" id="Increase" class="BUY">BUY</button>
+        <button onclick="incrementCounter()" class="Cart">ADD</button>
+    </div>
+
+    <div class="box4">
+        <h1>$60</h1>
+        <div class="picture">🛹</div>
+        <p>This is a 20inch Sonic skate board with hight Quanlity texture.</p>
+        <h1>⭐⭐⭐⭐⭐</h1>
+        <input class="Quantity" type="number" placeholder="Quantity">
+        <button onclick="alert('thanks for buying.')" id="Increase" class="BUY">BUY</button>
+        <button onclick="incrementCounter()" class="Cart">ADD</button>
+    </div>
+
+    <div class="box5">
+        <h1>$4,000</h1>
+        <div class="picture">💻</div>
+        <p>This is a the Windows 12 pc good quality with a pencil that help for designing.</p>
+        <h1>⭐⭐⭐⭐</h1>
+        <input class="Quantity" type="number" placeholder="Quantity">
+        <button onclick="alert('thanks for buying.')" id="Increase" class="BUY">BUY</button>
+        <button onclick="incrementCounter()" class="Cart">ADD</button>
+    </div>
+
+    <div class="box6">
+        <h1>$9,000</h1>
+        <div class="picture">🏚️</div>
+        <p>This is a 1story diary mansion.</p>
+        <h1>⭐⭐⭐⭐⭐</h1>
+        <input class="Quantity" type="number" placeholder="Quantity">
+        <button onclick="alert('thanks for buying.')" id="Increase" class="BUY">BUY</button>
+        <button onclick="incrementCounter()" class="Cart">ADD</button>
+    </div>
+</body>
+</html>
+<script src="SonicJs.js"></script>
